@@ -1,4 +1,19 @@
-import os
+
+# Train a new model starting from pre-trained COCO weights
+python pedestrian.py train --dataset=/path/to/pedestrian/dataset --weights=coco
+
+# Resume training a model that you had trained earlier
+python pedestrian.py train --dataset=/path/to/pedestrian/dataset --weights=last
+
+# Train a new model starting from ImageNet weights
+python pedestrian.py train --dataset=/path/to/pedestrian/dataset --weights=imagenet
+
+# Apply color splash to an image
+python pedestrian.py splash --weights=/path/to/pedestrian/file.h5 --image=<URL or path to file>
+
+# Apply color splash to video using the last weights you trained
+python pedestrian.py splash --weights=last --video=<URL or path to file>import os
+
 import sys
 import json
 import datetime
